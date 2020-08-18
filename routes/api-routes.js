@@ -1,9 +1,9 @@
-const db = require("../models");
-// const mongoose = require("mongoose");
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
-//     useNewUrlParser: true,
-//     useFindAndModify: false
-// });
+// const db = ("../models");
+const mongoose = require("mongoose");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
+    useNewUrlParser: true,
+    useFindAndModify: false
+});
 module.exports = (app) => {
     app.get("/api/workouts", (req, res) => {
         db.Workout.find({})
